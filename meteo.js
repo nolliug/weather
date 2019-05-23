@@ -2,18 +2,21 @@
 var callBackGetSuccess = function(data) {
 		console.log("donnees api: ",data);
 	  // alert("Meteo temp  : "  + data.main.temp);
-	  var element = document.getElementById("zone_meteo");
+		var element = document.getElementById("zone_ville");
+		element.innerHTML  = "La ville est: " + data.name;
+		var element = document.getElementById("zone_meteo");
 	  element.innerHTML  = "La Temperature est: " + data.main.temp;
 		//alert("Sucess : GET de taille : "  + data.length + " last ID "+lastId);
-		//ajout humidité
 		var element = document.getElementById("zone_humidite");
 		element.innerHTML  = "L'Humidité est: " + data.main.humidity;
-		//ajout icone
+		
 		var icon = data.weather[0].icon;
 		//var element = document.getElementById("zone_icone");
 		var element = document.querySelector("#zone_icone");
 		var url2 = 'http://openweathermap.org/img/w/'+icon+'.png';
 		element.setAttribute("src", url2 );
+		var element = document.getElementById("zone_dt");
+		element.innerHTML  = "Il est: " + data.dt;
 		};
 		
 	function buttonClickGET() {
