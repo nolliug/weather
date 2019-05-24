@@ -1,6 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  background-image: url(media/default.jpg);
+  background-color: black;
+}
+
+p {
+  color: white;
+}
+
+input {
+  color: yellow;
 }
 /*# sourceMappingURL=style.css.map */
